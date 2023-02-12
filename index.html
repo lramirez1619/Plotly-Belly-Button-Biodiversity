@@ -9,7 +9,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+
 <body>
+
+  <body style="background-color:lightblue;"></body>
+
+  <style>
+    .jumbotron {
+      background-image: url("image.jpg");
+      background-size: cover;
+      color: white;
+    }
+  </style>
 
   <div class="container">
     <div class="row">
@@ -32,10 +51,10 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div id="bar"></div>
+        <div id="gauge"></div>
       </div>
       <div class="col-md-5">
-        <div id="gauge"></div>
+        <div id="bar"></div>
       </div>
     </div>
     <div class="row">
@@ -44,6 +63,32 @@
       </div>
     </div>
   </div>
+
+
+  <section>
+    <h2>About the Project</h2>
+    <p>This project is a dashboard that displays data about belly button biodiversity. The data includes information
+      about the bacterial species present in a sample of belly button microbes, as well as other data about the
+      individual's health and hygiene habits. The dashboard includes three charts that display this data in an
+      interactive and visually appealing way.</p>
+  </section>
+
+  <style>
+    /* Default styles */
+    .chart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Styles for screens larger than 800px */
+    @media only screen and (min-width: 800px) {
+      .chart-container {
+        flex-direction: row;
+      }
+    }
+  </style>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

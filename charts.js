@@ -103,6 +103,8 @@ function buildCharts(sample) {
     // Deliverable 1: 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
+      width: 400,
+      height: 400,
       margin: { t: 30, l: 150 },
       xaxis: {
         title: "Sample Values"
@@ -115,6 +117,19 @@ function buildCharts(sample) {
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
     // Deliverable 2: 1. Create the trace for the bubble chart.
+    var bubbleData = [
+      {
+        x: otu_ids,
+        y: sample_values,
+        text: otu_labels,
+        mode: "markers",
+        marker: {
+          size: sample_values,
+          color: otu_ids,
+          colorscale: "Earth"
+        }
+      }
+    ];
 
     // Deliverable 2: 2. Create the layout for the bubble chart.
     var bubbleLayout = {
@@ -142,17 +157,13 @@ function buildCharts(sample) {
         type: "indicator",
         mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 9] },
+          axis: { range: [null, 10] },
           steps: [
-            { range: [0, 1], color: "lightgray" },
-            { range: [1, 2], color: "gray" },
-            { range: [2, 3], color: "lightgray" },
-            { range: [3, 4], color: "gray" },
-            { range: [4, 5], color: "lightgray" },
-            { range: [5, 6], color: "gray" },
-            { range: [6, 7], color: "lightgray" },
-            { range: [7, 8], color: "gray" },
-            { range: [8, 9], color: "lightgray" }
+            { range: [0, 2], color: "red" },
+            { range: [2, 4], color: "orange" },
+            { range: [4, 6], color: "yellow" },
+            { range: [6, 8], color: "lightgreen" },
+            { range: [8, 10], color: "green" },
           ],
           bar: { color: "black" }
         }
@@ -160,10 +171,11 @@ function buildCharts(sample) {
     ];
 
     // Deliverable 3: 5. Create the layout for the gauge chart.
-    var gaugeLayout = { width: 600, height: 500 };
+    var gaugeLayout = { width: 400, height: 400 };
 
     // Deliverable 3: 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout);
 
   });
 }
+
